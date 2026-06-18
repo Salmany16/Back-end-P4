@@ -12,21 +12,13 @@ class AllergeenSeeder extends Seeder
      */
     public function run(): void
     {
+        DB::table('Allergeen')->truncate();
         DB::table('Allergeen')->insert([
-            ['Naam' => 'Gluten', 'Omschrijving' => 'Granen die gluten bevatten zoals tarwe, rogge en gerst.'],
-            ['Naam' => 'Schaaldieren', 'Omschrijving' => 'Kreeft, garnalen, krab en andere schaaldieren.'],
-            ['Naam' => 'Eieren', 'Omschrijving' => 'Eieren van pluimvee.'],
-            ['Naam' => 'Vis', 'Omschrijving' => 'Alle soorten vis.'],
-            ['Naam' => 'Pinda\'s', 'Omschrijving' => 'Pinda\'s en producten op basis van pinda\'s.'],
-            ['Naam' => 'Soja', 'Omschrijving' => 'Sojaproducten zoals tofu en sojamelk.'],
-            ['Naam' => 'Melk', 'Omschrijving' => 'Zuivelproducten waaronder lactose.'],
-            ['Naam' => 'Noten', 'Omschrijving' => 'Amandelen, hazelnoten, walnoten, cashewnoten, etc.'],
-            ['Naam' => 'Selderij', 'Omschrijving' => 'Selderiestengels, -bladeren, -zaden en selderijwortel.'],
-            ['Naam' => 'Mosterd', 'Omschrijving' => 'Mosterdzaad en mosterdblaadjes.'],
-            ['Naam' => 'Sesamzaad', 'Omschrijving' => 'Sesamzaad en producten op basis van sesamzaad.'],
-            ['Naam' => 'Sulfiet', 'Omschrijving' => 'Sulfiet en zwaveldioxide als conserveringsmiddel.'],
-            ['Naam' => 'Lupine', 'Omschrijving' => 'Lupinezaad en lupinemeel.'],
-            ['Naam' => 'Weekdieren', 'Omschrijving' => 'Mosselen, oesters, inktvis en andere weekdieren.'],
+            ['naam' => 'Gluuuuten', 'omschrijving' => 'Dit product bevat gluuuuten'],
+            ['naam' => 'Gelatine', 'omschrijving' => 'Dit product bevat gelatine'],
+            ['naam' => 'AZO-kleurstof', 'omschrijving' => 'Dit product bevat AZO-kleurstof'],
+            ['naam' => 'Lactose', 'omschrijving' => 'Dit product bevat lactose'],
+            ['naam' => 'Soja', 'omschrijving' => 'Dit product bevat soja'],
         ]);
     }
 }

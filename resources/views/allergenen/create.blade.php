@@ -11,6 +11,14 @@
 
         <h2>{{ $title }}</h2>
 
+        @if ($errors->any())
+            <div class="alert alert-danger">
+                @foreach ($errors->all() as $err)
+                    <div>{{ $err }}</div>
+                @endforeach
+            </div>
+        @endif
+
         <form method="POST" action="{{ route('allergeen.store') }}">
             @csrf
             <div class="mb-3">

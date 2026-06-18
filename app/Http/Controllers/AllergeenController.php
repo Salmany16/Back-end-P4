@@ -84,7 +84,9 @@ class AllergeenController extends Controller
     {
         $validated = $request->validate([
             'naam' => ['required', 'string', 'max:50'],
-            'omschrijving' => ['required', 'string', 'max:255'],
+            'omschrijving' => ['required', 'string', 'max:50'],
+        ], [
+            'omschrijving.max' => 'omschrijving mag max 50 letters hebben',
         ]);
 
         $affected = $this->allergeenModel->sp_UpdateAllergeen(

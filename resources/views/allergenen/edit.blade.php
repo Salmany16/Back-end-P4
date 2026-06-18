@@ -7,7 +7,7 @@
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body>
-    <div class="container d-flex justify-content-center mt-5">
+    <div class="container mt-4">
 
         <div class="col-md-8">
 
@@ -15,11 +15,9 @@
 
             @if ($errors->any())
                 <div class="alert alert-danger">
-                    <ul class="mb-0">
-                        @foreach ($errors->all() as $err)
-                            <li>{{ $err }}</li>
-                        @endforeach
-                    </ul>
+                    @foreach ($errors->all() as $err)
+                        <div>{{ $err }}</div>
+                    @endforeach
                 </div>
             @endif
 

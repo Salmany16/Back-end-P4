@@ -24,7 +24,7 @@ Route::put('/allergeen/{id}', [AllergeenController::class, 'update'])->name('all
 
 Route::get('/tandarts', [TandartsController::class, 'index'])
     ->name('tandarts.index')
-    ->middleware(['auth', 'role:tandarts,praktijkmanagement']);
+    ->middleware(['auth', 'role:tandarts']);
 
 Route::get('/assistent', [AssistentController::class, 'index'])
     ->name('assistent.index')

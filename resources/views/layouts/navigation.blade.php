@@ -25,7 +25,7 @@
                         </x-nav-link>
                     @endif
 
-                    @if (in_array($userRole, ['tandarts', 'praktijkmanagement']))
+                    @if ($userRole === 'tandarts')
                         <x-nav-link :href="route('tandarts.index')" :active="request()->routeIs('tandarts.index')">
                             {{ __('Tandarts') }}
                         </x-nav-link>
@@ -44,10 +44,7 @@
                     @endif
 
                     @if ($userRole === 'praktijkmanagement')
-                        <x-nav-link :href="route('praktijkmanagement.index')" :active="request()->routeIs('praktijkmanagement.index')">
-                            {{ __('Praktijkmanagement') }}
-                        </x-nav-link>
-                        <x-nav-link :href="route('praktijkmanagement.userroles')" :active="request()->routeIs('praktijkmanagement.userroles')">
+                        <x-nav-link :href="route('praktijkmanagement.userroles')" :active="request()->routeIs('praktijkmanagement.*')">
                             {{ __('Gebruikersrollen') }}
                         </x-nav-link>
                     @endif
@@ -119,7 +116,7 @@
                 </x-responsive-nav-link>
             @endif
 
-            @if(in_array($userRole, ['tandarts', 'praktijkmanagement']))
+            @if($userRole === 'tandarts')
                 <x-responsive-nav-link :href="route('tandarts.index')" :active="request()->routeIs('tandarts.index')">
                     {{ __('Tandarts Home') }}
                 </x-responsive-nav-link>
@@ -138,10 +135,7 @@
             @endif
 
             @if($userRole === 'praktijkmanagement')
-                <x-responsive-nav-link :href="route('praktijkmanagement.index')" :active="request()->routeIs('praktijkmanagement.index')">
-                    {{ __('Praktijkmanagement Home') }}
-                </x-responsive-nav-link>
-                <x-responsive-nav-link :href="route('praktijkmanagement.userroles')" :active="request()->routeIs('praktijkmanagement.userroles')">
+                <x-responsive-nav-link :href="route('praktijkmanagement.userroles')" :active="request()->routeIs('praktijkmanagement.*')">
                     {{ __('Gebruikersrollen') }}
                 </x-responsive-nav-link>
             @endif
